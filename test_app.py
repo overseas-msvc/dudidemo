@@ -14,7 +14,7 @@ def client():
 def test_hello(client):
     response = client.get("/hello", json={'name': 'jhon due'})
     assert response.status_code == 200
-    assert json.loads(response.get_data()) == "Hello, jhon due"
+    assert json.loads(response.get_data()) == "Hi, jhon due"
 
 def test_bye(client):
     response = client.get("/bye", json={})
