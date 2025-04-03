@@ -12,9 +12,9 @@ def client():
 
 
 def test_hello(client):
-    response = client.get("/hello", json={'name': 'sample_string'})
+    response = client.get("/hello", json={'name': 'jhon due'})
     assert response.status_code == 200
-    assert json.loads(response.get_data()) == "reply from endpoint hello, data = {'name': 'sample_string'}"
+    assert json.loads(response.get_data()) == "Hello, jhon due"
 
 def test_bye(client):
     response = client.get("/bye", json={})
