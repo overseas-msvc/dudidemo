@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dudidemo
+  labels:
+    service: dudidemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: dudidemo
+  template:
+    metadata:
+      labels:
+        service: dudidemo
+    spec:
+      containers:
+      - name: dudidemo-container
+        image: hhana982/dudi:1.<version>
+        ports:
+        - containerPort: 5000
+        env: 
+        - name: age
+          value: "32"
