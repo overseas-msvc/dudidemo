@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/hello", methods=["GET"])
 def hello():
 	data = request.json
-	return jsonify(f"reply from endpoint hello, data = {data}")
+	return jsonify(f"Hi, {data['name']}")
 
 @app.route("/bye", methods=["GET"])
 def bye():
